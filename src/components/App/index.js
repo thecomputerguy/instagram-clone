@@ -9,6 +9,7 @@ import SignInPage from '../SignIn'
 import PasswordForgetPage from '../PasswordForget'
 import AccountPage from '../Account'
 import AdminPage from '../Admin'
+import { withAuthentication } from '../Session'
 
 const App = () => {
     return (
@@ -26,4 +27,4 @@ const App = () => {
         )
 }
 
-export default App
+export default withAuthentication(App)
