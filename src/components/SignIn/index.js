@@ -4,12 +4,14 @@ import { SignUpLink } from '../SignUp'
 import { withFirebase } from '../Firebase'
 import { compose } from 'recompose'
 import * as Routes from '../../constants/routes'
+import { PasswordForgetLink } from '../PasswordForget'
 
 const SignInPage = () => {
     return (
         <div>
             <h1>Sign in</h1>
             <SignInForm />
+            <PasswordForgetLink />            
             <SignUpLink />
         </div>
     )
