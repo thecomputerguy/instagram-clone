@@ -1,9 +1,13 @@
 import React from 'react'
+import PasswordChange from '../PasswordChange'
+import PasswordForget from '../PasswordForget'
 
 const Account = () => {
     return (
         <div>
-            This is an Account page
+            <h1>Account Page</h1>
+            <PasswordForget />
+            <PasswordChange />
         </div>
     )
 }
