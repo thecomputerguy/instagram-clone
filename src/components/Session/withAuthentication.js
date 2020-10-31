@@ -5,11 +5,11 @@ import AuthUserContext  from './context'
 const withAuthentication = Component => {
     
     const WithAuthenticationNested = (props) => {
-        const [authUser, setAuthUser] = useState({authUser: null})
+        const [authUser, setAuthUser] = useState(null)
 
         useEffect(() => {
             props.firebase.auth.onAuthStateChanged(authUser =>{
-                authUser ? setAuthUser({authUser}) : setAuthUser({authUser: null})
+                authUser ? setAuthUser(authUser) : setAuthUser(null)
             })
             
         }, [props.firebase.auth])
