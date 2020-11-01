@@ -8,7 +8,7 @@ const SignUpPage = () => {
     return (
         <div>
             <h1>Sign up</h1>
-            <SignUpForm/>
+            <SignUpForm />
         </div>
     )
 }
@@ -36,9 +36,16 @@ const SignUpFormBase = (props) => {
         props.firebase
         .doCreateUserWithUsernameAndPassword(email, password)
         .then(authUser => {
+            
+            props.firebase
+            .user(authUser.user.uid)
+            .set({username, email})
+        })
+        .then(() => {
             setFormState({...initialState})
             props.history.push(Routes.HOME)
-        }).catch(error => {
+        })
+        .catch(error => {
             setFormState({ error })
         })
 
