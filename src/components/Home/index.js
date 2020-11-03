@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { withAuthorization } from '../Session'
+import ImageGrid from '../upload/ImageGrid'
+import Modal from '../upload/Modal'
+import Title from '../upload/Title'
+import UploadForm from '../upload/UploadForm'
 
 const Home = () => {
+
+  const [ selectedImage, setSelectedImage ] = useState(null)
+
     return (
         <div>
-          This is a home page  
+          <Title />
+          <UploadForm />
+          <ImageGrid setSelectedImage={ setSelectedImage }/>
+          {selectedImage && (<Modal selectedImage={ selectedImage } setSelectedImage={ setSelectedImage }/>)}
         </div>
     )
 }
